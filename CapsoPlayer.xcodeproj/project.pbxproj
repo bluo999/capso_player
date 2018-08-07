@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84E54BE821190F7000928575 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E54BE721190F7000928575 /* AppDelegate.swift */; };
+		84E54BEA21190F7000928575 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E54BE921190F7000928575 /* ViewController.swift */; };
+		84E54BED21190F7000928575 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E54BEB21190F7000928575 /* Main.storyboard */; };
+		84E54BEF21190F7200928575 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E54BEE21190F7200928575 /* Assets.xcassets */; };
+		84E54BF221190F7200928575 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E54BF021190F7200928575 /* LaunchScreen.storyboard */; };
+		84E54BFD21190F7200928575 /* CapsoPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E54BFC21190F7200928575 /* CapsoPlayerTests.swift */; };
+		84E54C0821190F7200928575 /* CapsoPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E54C0721190F7200928575 /* CapsoPlayerUITests.swift */; };
+		84E54C16211A5A7000928575 /* JSONData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E54C15211A5A7000928575 /* JSONData.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84E54BF921190F7200928575 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E54BDC21190F7000928575 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84E54BE321190F7000928575;
+			remoteInfo = CapsoPlayer;
+		};
+		84E54C0421190F7200928575 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E54BDC21190F7000928575 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84E54BE321190F7000928575;
+			remoteInfo = CapsoPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		84E54BE421190F7000928575 /* CapsoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapsoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E54BE721190F7000928575 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84E54BE921190F7000928575 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84E54BEC21190F7000928575 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84E54BEE21190F7200928575 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84E54BF121190F7200928575 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84E54BF321190F7200928575 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84E54BF821190F7200928575 /* CapsoPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CapsoPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E54BFC21190F7200928575 /* CapsoPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsoPlayerTests.swift; sourceTree = "<group>"; };
+		84E54BFE21190F7200928575 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84E54C0321190F7200928575 /* CapsoPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CapsoPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E54C0721190F7200928575 /* CapsoPlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsoPlayerUITests.swift; sourceTree = "<group>"; };
+		84E54C0921190F7200928575 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84E54C15211A5A7000928575 /* JSONData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONData.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84E54BE121190F7000928575 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E54BF521190F7200928575 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E54C0021190F7200928575 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84E54BDB21190F7000928575 = {
+			isa = PBXGroup;
+			children = (
+				84E54BE621190F7000928575 /* CapsoPlayer */,
+				84E54BFB21190F7200928575 /* CapsoPlayerTests */,
+				84E54C0621190F7200928575 /* CapsoPlayerUITests */,
+				84E54BE521190F7000928575 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84E54BE521190F7000928575 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84E54BE421190F7000928575 /* CapsoPlayer.app */,
+				84E54BF821190F7200928575 /* CapsoPlayerTests.xctest */,
+				84E54C0321190F7200928575 /* CapsoPlayerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84E54BE621190F7000928575 /* CapsoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				84E54C15211A5A7000928575 /* JSONData.swift */,
+				84E54BE721190F7000928575 /* AppDelegate.swift */,
+				84E54BE921190F7000928575 /* ViewController.swift */,
+				84E54BEB21190F7000928575 /* Main.storyboard */,
+				84E54BEE21190F7200928575 /* Assets.xcassets */,
+				84E54BF021190F7200928575 /* LaunchScreen.storyboard */,
+				84E54BF321190F7200928575 /* Info.plist */,
+			);
+			path = CapsoPlayer;
+			sourceTree = "<group>";
+		};
+		84E54BFB21190F7200928575 /* CapsoPlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				84E54BFC21190F7200928575 /* CapsoPlayerTests.swift */,
+				84E54BFE21190F7200928575 /* Info.plist */,
+			);
+			path = CapsoPlayerTests;
+			sourceTree = "<group>";
+		};
+		84E54C0621190F7200928575 /* CapsoPlayerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84E54C0721190F7200928575 /* CapsoPlayerUITests.swift */,
+				84E54C0921190F7200928575 /* Info.plist */,
+			);
+			path = CapsoPlayerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84E54BE321190F7000928575 /* CapsoPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84E54C0C21190F7200928575 /* Build configuration list for PBXNativeTarget "CapsoPlayer" */;
+			buildPhases = (
+				84E54BE021190F7000928575 /* Sources */,
+				84E54BE121190F7000928575 /* Frameworks */,
+				84E54BE221190F7000928575 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CapsoPlayer;
+			productName = CapsoPlayer;
+			productReference = 84E54BE421190F7000928575 /* CapsoPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84E54BF721190F7200928575 /* CapsoPlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84E54C0F21190F7200928575 /* Build configuration list for PBXNativeTarget "CapsoPlayerTests" */;
+			buildPhases = (
+				84E54BF421190F7200928575 /* Sources */,
+				84E54BF521190F7200928575 /* Frameworks */,
+				84E54BF621190F7200928575 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84E54BFA21190F7200928575 /* PBXTargetDependency */,
+			);
+			name = CapsoPlayerTests;
+			productName = CapsoPlayerTests;
+			productReference = 84E54BF821190F7200928575 /* CapsoPlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		84E54C0221190F7200928575 /* CapsoPlayerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84E54C1221190F7200928575 /* Build configuration list for PBXNativeTarget "CapsoPlayerUITests" */;
+			buildPhases = (
+				84E54BFF21190F7200928575 /* Sources */,
+				84E54C0021190F7200928575 /* Frameworks */,
+				84E54C0121190F7200928575 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84E54C0521190F7200928575 /* PBXTargetDependency */,
+			);
+			name = CapsoPlayerUITests;
+			productName = CapsoPlayerUITests;
+			productReference = 84E54C0321190F7200928575 /* CapsoPlayerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84E54BDC21190F7000928575 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = CapsoVision;
+				TargetAttributes = {
+					84E54BE321190F7000928575 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					84E54BF721190F7200928575 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 84E54BE321190F7000928575;
+					};
+					84E54C0221190F7200928575 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 84E54BE321190F7000928575;
+					};
+				};
+			};
+			buildConfigurationList = 84E54BDF21190F7000928575 /* Build configuration list for PBXProject "CapsoPlayer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84E54BDB21190F7000928575;
+			productRefGroup = 84E54BE521190F7000928575 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84E54BE321190F7000928575 /* CapsoPlayer */,
+				84E54BF721190F7200928575 /* CapsoPlayerTests */,
+				84E54C0221190F7200928575 /* CapsoPlayerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84E54BE221190F7000928575 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E54BF221190F7200928575 /* LaunchScreen.storyboard in Resources */,
+				84E54BEF21190F7200928575 /* Assets.xcassets in Resources */,
+				84E54BED21190F7000928575 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E54BF621190F7200928575 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E54C0121190F7200928575 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84E54BE021190F7000928575 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E54BEA21190F7000928575 /* ViewController.swift in Sources */,
+				84E54BE821190F7000928575 /* AppDelegate.swift in Sources */,
+				84E54C16211A5A7000928575 /* JSONData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E54BF421190F7200928575 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E54BFD21190F7200928575 /* CapsoPlayerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E54BFF21190F7200928575 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E54C0821190F7200928575 /* CapsoPlayerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84E54BFA21190F7200928575 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84E54BE321190F7000928575 /* CapsoPlayer */;
+			targetProxy = 84E54BF921190F7200928575 /* PBXContainerItemProxy */;
+		};
+		84E54C0521190F7200928575 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84E54BE321190F7000928575 /* CapsoPlayer */;
+			targetProxy = 84E54C0421190F7200928575 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84E54BEB21190F7000928575 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84E54BEC21190F7000928575 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84E54BF021190F7200928575 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84E54BF121190F7200928575 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84E54C0A21190F7200928575 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84E54C0B21190F7200928575 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84E54C0D21190F7200928575 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q4VU49T8GG;
+				INFOPLIST_FILE = CapsoPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.capsovision.CapsoPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84E54C0E21190F7200928575 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q4VU49T8GG;
+				INFOPLIST_FILE = CapsoPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.capsovision.CapsoPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		84E54C1021190F7200928575 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q4VU49T8GG;
+				INFOPLIST_FILE = CapsoPlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.capsovision.CapsoPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CapsoPlayer.app/CapsoPlayer";
+			};
+			name = Debug;
+		};
+		84E54C1121190F7200928575 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q4VU49T8GG;
+				INFOPLIST_FILE = CapsoPlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.capsovision.CapsoPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CapsoPlayer.app/CapsoPlayer";
+			};
+			name = Release;
+		};
+		84E54C1321190F7200928575 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q4VU49T8GG;
+				INFOPLIST_FILE = CapsoPlayerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.capsovision.CapsoPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CapsoPlayer;
+			};
+			name = Debug;
+		};
+		84E54C1421190F7200928575 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q4VU49T8GG;
+				INFOPLIST_FILE = CapsoPlayerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.capsovision.CapsoPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CapsoPlayer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84E54BDF21190F7000928575 /* Build configuration list for PBXProject "CapsoPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E54C0A21190F7200928575 /* Debug */,
+				84E54C0B21190F7200928575 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84E54C0C21190F7200928575 /* Build configuration list for PBXNativeTarget "CapsoPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E54C0D21190F7200928575 /* Debug */,
+				84E54C0E21190F7200928575 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84E54C0F21190F7200928575 /* Build configuration list for PBXNativeTarget "CapsoPlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E54C1021190F7200928575 /* Debug */,
+				84E54C1121190F7200928575 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84E54C1221190F7200928575 /* Build configuration list for PBXNativeTarget "CapsoPlayerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E54C1321190F7200928575 /* Debug */,
+				84E54C1421190F7200928575 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84E54BDC21190F7000928575 /* Project object */;
+}
