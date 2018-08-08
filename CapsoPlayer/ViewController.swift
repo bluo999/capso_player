@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     let framesPerSecond = 5.0
     var isVideoPlaying = false
     var currentFrame = 1;
+    var maxFrame = 1;
     
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var currentTimeLabel: UILabel!
@@ -31,8 +32,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //https://v.cdn.vine.co/r/videos/AA3C120C521177175800441692160_38f2cbd1ffb.1.5.13763579289575020226.mp4
-        let videoURL = URL(string: "https://v.cdn.vine.co/r/videos/AA3C120C521177175800441692160_38f2cbd1ffb.1.5.13763579289575020226.mp4")!
+        /*
+        https://v.cdn.vine.co/r/videos/AA3C120C521177175800441692160_38f2cbd1ffb.1.5.13763579289575020226.mp4
+        */
+        let videoURL = URL(string: "")!
         player = AVPlayer(url: videoURL)
         player.currentItem?.addObserver(self, forKeyPath: "duration", options: [.new, .initial], context: nil)
         addTimeObserver()
@@ -41,9 +44,9 @@ class ViewController: UIViewController {
         
         videoView.layer.addSublayer(playerLayer)
         
+        maxFrame = (jsonData["FRAMES"] as! [String]).count - 1
         self.serialNumberLabel.text = "SN: " + (jsonData["SN"] as! String)
-        self.frameLabel.text = "Frame: " + String(currentFrame)
-        self.capsuleTimeLabel.text = "Video Time: " + getVideoTimeFromFrame(frame: currentFrame)
+        updateCurrentFrame(frame: 1)
     }
     
     override func viewDidLayoutSubviews() {
@@ -60,8 +63,7 @@ class ViewController: UIViewController {
             self?.timeSlider.minimumValue = 0
             self?.timeSlider.value = Float(currentItem.currentTime().seconds)
             self?.currentTimeLabel.text = self?.getTimeString(from: currentItem.currentTime())
-            self?.currentFrame = Int(currentItem.currentTime().seconds * (self?.framesPerSecond)!)
-            self?.frameLabel.text = String(self!.currentFrame)
+            self?.updateCurrentFrame(frame: Int(currentItem.currentTime().seconds * (self?.framesPerSecond)!))
         })
     }
     
@@ -88,7 +90,7 @@ class ViewController: UIViewController {
             newTime = CMTimeGetSeconds(duration)
         }
         let time: CMTime = CMTimeMake(Int64(newTime * 1000), 1000)
-        player.seek(to: time)
+        player.seek(to: time, toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimeZero)
     }
     
     @IBAction func backwardsPressed(_ sender: Any) {
@@ -100,15 +102,20 @@ class ViewController: UIViewController {
             newTime = 0
         }
         let time: CMTime = CMTimeMake(Int64(newTime * 1000), 1000)
-        player.seek(to: time)
+        player.seek(to: time, toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimeZero)
     }
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
-        player.seek(to: CMTimeMake(Int64(sender.value * 1000), 1000))
+        let time: CMTime = CMTimeMake(Int64(sender.value * 1000), 1000)
+        player.seek(to: time, toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimeZero)
         if !isVideoPlaying {
             playButton.setTitle("Play", for: .normal)
             isVideoPlaying = !isVideoPlaying
         }
+    }
+    
+    @IBAction func sliderTouchDown(_ sender: UISlider) {
+        print("test");
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -134,6 +141,12 @@ class ViewController: UIViewController {
     func getVideoTimeFromFrame(frame: Int) -> String {
         let frames = jsonData["FRAMES"]
         return (frames as! [String])[frame]
+    }
+    
+    func updateCurrentFrame(frame: Int) {
+        self.currentFrame = frame;
+        self.frameLabel.text = "Frame: " + String(frame) + " / " + String(maxFrame)
+        self.capsuleTimeLabel.text = "Capsule Time: " + getVideoTimeFromFrame(frame: frame) + " / " + getVideoTimeFromFrame(frame: maxFrame)
     }
 }
 
