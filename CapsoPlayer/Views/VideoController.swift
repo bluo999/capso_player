@@ -138,7 +138,7 @@ class VideoController: UIViewController {
         }
     }
     
-    /*@IBAction func captureImage(_ sender: Any) {
+    @IBAction func captureImage(_ sender: Any) {
         print("test")
         let asset = AVAsset(url: videoURL)
         print("test1")
@@ -150,7 +150,7 @@ class VideoController: UIViewController {
         print("test4")
         var thumbnail = UIImage(cgImage: imageRef)
         print("test5")
-    }*/
+    }
     
     private func getTimeString(from time: CMTime) -> String {
         let totalSeconds = CMTimeGetSeconds(time)
