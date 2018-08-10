@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 
 class ImageController: UIViewController {
+    static let imageController = ImageController()
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -18,6 +19,7 @@ class ImageController: UIViewController {
     }
     
     func changeImage(newImage: UIImage) {
+        print(newImage)
         imageView.image = newImage
     }
 }

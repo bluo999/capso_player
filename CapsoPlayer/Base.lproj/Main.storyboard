@@ -86,7 +86,6 @@
                                 <constraints>
                                     <constraint firstItem="Stf-v5-pUz" firstAttribute="centerY" secondItem="baI-Jt-YCI" secondAttribute="centerY" id="8QM-X8-PNk"/>
                                     <constraint firstItem="NW2-rk-O9x" firstAttribute="leading" secondItem="4gw-0D-mHC" secondAttribute="trailing" constant="16" id="9hU-id-jPu"/>
-                                    <constraint firstItem="Stf-v5-pUz" firstAttribute="leading" secondItem="baI-Jt-YCI" secondAttribute="trailing" constant="16" id="AoM-l7-dtz"/>
                                     <constraint firstAttribute="bottom" secondItem="4gw-0D-mHC" secondAttribute="bottom" constant="8" id="GWB-Fs-0Uy"/>
                                     <constraint firstItem="baI-Jt-YCI" firstAttribute="centerX" secondItem="4gw-0D-mHC" secondAttribute="centerX" id="Jfo-tc-fhk"/>
                                     <constraint firstItem="NW2-rk-O9x" firstAttribute="centerY" secondItem="4gw-0D-mHC" secondAttribute="centerY" id="Mzh-Tn-rAD"/>
@@ -94,11 +93,12 @@
                                     <constraint firstItem="aku-3d-iA2" firstAttribute="centerY" secondItem="baI-Jt-YCI" secondAttribute="centerY" id="U30-Xs-yp7"/>
                                     <constraint firstItem="4gw-0D-mHC" firstAttribute="leading" secondItem="qLB-EA-h2m" secondAttribute="trailing" constant="16" id="axi-ce-X4Y"/>
                                     <constraint firstItem="qLB-EA-h2m" firstAttribute="leading" secondItem="uhn-cP-vX0" secondAttribute="leading" constant="8" id="bdb-1L-1uI"/>
+                                    <constraint firstItem="Stf-v5-pUz" firstAttribute="leading" secondItem="baI-Jt-YCI" secondAttribute="trailing" constant="16" id="bpp-Rv-6Nf"/>
                                     <constraint firstItem="uIY-4c-Yeb" firstAttribute="top" secondItem="uhn-cP-vX0" secondAttribute="top" constant="8" id="fg0-aU-fVO"/>
                                     <constraint firstItem="qLB-EA-h2m" firstAttribute="centerY" secondItem="4gw-0D-mHC" secondAttribute="centerY" id="gld-mH-FUV"/>
                                     <constraint firstItem="qLB-EA-h2m" firstAttribute="top" secondItem="4gw-0D-mHC" secondAttribute="top" id="gmP-pv-OwS"/>
+                                    <constraint firstItem="baI-Jt-YCI" firstAttribute="leading" secondItem="aku-3d-iA2" secondAttribute="trailing" constant="16" id="h5X-UR-utk"/>
                                     <constraint firstAttribute="trailing" secondItem="NW2-rk-O9x" secondAttribute="trailing" constant="8" id="hZP-dd-bna"/>
-                                    <constraint firstItem="baI-Jt-YCI" firstAttribute="leading" secondItem="aku-3d-iA2" secondAttribute="trailing" constant="16" id="lDP-D0-ess"/>
                                     <constraint firstItem="uIY-4c-Yeb" firstAttribute="centerX" secondItem="uhn-cP-vX0" secondAttribute="centerX" id="pOf-MH-JUn"/>
                                     <constraint firstItem="4gw-0D-mHC" firstAttribute="centerY" secondItem="uhn-cP-vX0" secondAttribute="centerY" id="xaY-53-jwg"/>
                                 </constraints>
@@ -125,21 +125,31 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1g0-FP-tLL">
-                                        <rect key="frame" x="553" y="0.0" width="114" height="114"/>
+                                        <rect key="frame" x="467" y="0.0" width="200" height="114"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZN-62-Cym">
-                                                <rect key="frame" x="6.5" y="42" width="101" height="30"/>
+                                                <rect key="frame" x="49.5" y="35" width="101" height="42"/>
                                                 <state key="normal" title="Capture Image"/>
                                                 <connections>
                                                     <action selector="captureImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qxF-Gd-ofz"/>
                                                 </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xYU-bX-RRT">
+                                                <rect key="frame" x="0.0" y="77" width="200" height="37"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="xYU-bX-RRT" secondAttribute="height" multiplier="1152:212" id="8Be-Of-zdj"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="VZN-62-Cym" firstAttribute="centerX" secondItem="1g0-FP-tLL" secondAttribute="centerX" id="4AD-ko-YTn"/>
-                                            <constraint firstAttribute="width" constant="114" id="9cK-Ax-1aw"/>
+                                            <constraint firstAttribute="bottom" secondItem="xYU-bX-RRT" secondAttribute="bottom" id="54S-kT-FZg"/>
+                                            <constraint firstItem="xYU-bX-RRT" firstAttribute="leading" secondItem="1g0-FP-tLL" secondAttribute="leading" id="56a-M8-RzU"/>
+                                            <constraint firstAttribute="width" constant="200" id="9cK-Ax-1aw"/>
+                                            <constraint firstItem="xYU-bX-RRT" firstAttribute="top" secondItem="VZN-62-Cym" secondAttribute="bottom" id="Rij-Kf-nL4"/>
                                             <constraint firstItem="VZN-62-Cym" firstAttribute="centerY" secondItem="1g0-FP-tLL" secondAttribute="centerY" id="XJc-bV-iDy"/>
+                                            <constraint firstAttribute="trailing" secondItem="xYU-bX-RRT" secondAttribute="trailing" id="mtM-yq-U0q"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -187,6 +197,7 @@
                         <outlet property="frameLabel" destination="moQ-Ny-RMO" id="AuZ-yR-lx6"/>
                         <outlet property="playButton" destination="baI-Jt-YCI" id="Pme-lO-LV7"/>
                         <outlet property="serialNumberLabel" destination="BAq-K4-cxx" id="XAn-Tl-TVs"/>
+                        <outlet property="testImage" destination="xYU-bX-RRT" id="h3F-hC-w3g"/>
                         <outlet property="timeSlider" destination="4gw-0D-mHC" id="G8d-Up-qZi"/>
                         <outlet property="videoView" destination="i2T-6m-Ty7" id="0gp-qt-hvj"/>
                     </connections>
@@ -201,6 +212,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="d7c-jW-YCV" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pp6-UH-Gui">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

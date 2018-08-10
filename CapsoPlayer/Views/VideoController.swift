@@ -19,13 +19,15 @@ class VideoController: UIViewController {
     /*
      https://v.cdn.vine.co/r/videos/AA3C120C521177175800441692160_38f2cbd1ffb.1.5.13763579289575020226.mp4
      */
-    let videoURL = URL(string: "")!
+    let videoURL = URL(string: "https://s3.amazonaws.com/capsovision-s3-test/video/test_pano.mp4")!
     
     let framesPerSecond = 5.0
     var isVideoPlaying = false
     var currentFrame = 1
     var maxFrame = 1
     var atEnd = false
+    
+    var captureImage: UIImage?
     
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var currentTimeLabel: UILabel!
@@ -36,6 +38,7 @@ class VideoController: UIViewController {
     @IBOutlet weak var frameLabel: UILabel!
     @IBOutlet weak var capsuleTimeLabel: UILabel!
     
+    @IBOutlet weak var testImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,8 +56,6 @@ class VideoController: UIViewController {
         updateCurrentFrame(frame: 1)
         
         NotificationCenter.default.addObserver(self, selector: #selector(VideoController.finishVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
-        
-        //setupMenuBar()
     }
     
     override func viewDidLayoutSubviews() {
@@ -68,7 +69,6 @@ class VideoController: UIViewController {
         _ = player.addPeriodicTimeObserver(forInterval: interval, queue: mainQueue, using: { [weak self]time in
             guard let currentItem = self?.player.currentItem else {return}
             
-            print("test1")
             self?.timeSlider.maximumValue = Float(CMTimeGetSeconds(currentItem.loadedTimeRanges[0].timeRangeValue.duration))
             self?.timeSlider.minimumValue = 0
             self?.timeSlider.value = Float(currentItem.currentTime().seconds)
@@ -103,7 +103,7 @@ class VideoController: UIViewController {
         if newTime >= (CMTimeGetSeconds(duration) - secondsForward) {
             newTime = CMTimeGetSeconds(duration)
         }
-        let time: CMTime = CMTimeMake(Int64(newTime * 1000), 1000)
+        let time: CMTime = CMTimeMake(Int64(newTime * 100000), 100000)
         player.seek(to: time, toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimeZero)
     }
     
@@ -115,21 +115,19 @@ class VideoController: UIViewController {
         if newTime < 0 {
             newTime = 0
         }
-        let time: CMTime = CMTimeMake(Int64(newTime * 1000), 1000)
+        let time: CMTime = CMTimeMake(Int64(newTime * 100000), 100000)
         player.seek(to: time, toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimeZero)
         atEnd = false
-        print(atEnd)
     }
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
-        let time: CMTime = CMTimeMake(Int64(sender.value * 1000), 1000)
+        let time: CMTime = CMTimeMake(Int64(sender.value * 100000), 100000)
         player.seek(to: time, toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimeZero)
         if !isVideoPlaying {
             playButton.setTitle("Play", for: .normal)
             isVideoPlaying = !isVideoPlaying
         }
         atEnd = false
-        print(atEnd)
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -139,17 +137,41 @@ class VideoController: UIViewController {
     }
     
     @IBAction func captureImage(_ sender: Any) {
-        print("test")
+        if isVideoPlaying {
+            player.pause()
+            playButton.setTitle("Play", for: .normal)
+            isVideoPlaying = false
+        }
+        
+        /*var myImage: UIImage?
+        
+        let currentTime: CMTime = player.currentTime()
+        let currentTimeInSecs: Float64 = CMTimeGetSeconds(currentTime)
+        let actionTime: CMTime = CMTimeMake(Int64(currentTimeInSecs * 100000), 100000)
+        
         let asset = AVAsset(url: videoURL)
-        print("test1")
         let imageGenerator = AVAssetImageGenerator(asset: asset)
-        print("test2")
-        let time = CMTimeMake(1, 1)
-        print("test3")
-        let imageRef = try! imageGenerator.copyCGImage(at: time, actualTime: nil)
-        print("test4")
-        var thumbnail = UIImage(cgImage: imageRef)
-        print("test5")
+        imageGenerator.appliesPreferredTrackTransform = true
+        imageGenerator.requestedTimeToleranceAfter = kCMTimeZero
+        imageGenerator.requestedTimeToleranceBefore = kCMTimeZero
+        
+        do {
+            let imageRef = try imageGenerator.copyCGImage(at: actionTime, actualTime: nil)
+            myImage = UIImage(cgImage: imageRef)
+        }
+        catch let err as NSError {
+            print(err.localizedDescription)
+        }*/
+        
+        UIGraphicsBeginImageContextWithOptions(videoView.frame.size, false, UIScreen.main.scale)
+        videoView.drawHierarchy(in: videoView.bounds, afterScreenUpdates: true)
+        self.captureImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        testImage.image = self.captureImage
+        
+        print(captureImage!)
+        ImageController.imageController.changeImage(newImage: self.captureImage!)
     }
     
     private func getTimeString(from time: CMTime) -> String {
@@ -172,7 +194,6 @@ class VideoController: UIViewController {
     }
     
     private func updateCurrentFrame(frame: Int) {
-        print(frame)
         self.currentFrame = frame;
         self.frameLabel.text = "Frame: " + String(frame) + " / " + String(maxFrame)
         self.capsuleTimeLabel.text = "Capsule Time: " + getVideoTimeFromFrame(frame: frame) + " / " + getVideoTimeFromFrame(frame: maxFrame)
@@ -181,7 +202,6 @@ class VideoController: UIViewController {
     @objc func finishVideo() {
         atEnd = true
         isVideoPlaying = false
-        print(atEnd)
         playButton.setTitle("Play", for: .normal)
     }
 }
