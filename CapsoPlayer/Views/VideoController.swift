@@ -27,7 +27,7 @@ class VideoController: UIViewController {
     var maxFrame = 1
     var atEnd = false
     
-    var captureImage: UIImage?
+    var newImage: UIImage?
     
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var currentTimeLabel: UILabel!
@@ -37,8 +37,6 @@ class VideoController: UIViewController {
     @IBOutlet weak var serialNumberLabel: UILabel!
     @IBOutlet weak var frameLabel: UILabel!
     @IBOutlet weak var capsuleTimeLabel: UILabel!
-    
-    @IBOutlet weak var testImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -143,35 +141,15 @@ class VideoController: UIViewController {
             isVideoPlaying = false
         }
         
-        /*var myImage: UIImage?
-        
-        let currentTime: CMTime = player.currentTime()
-        let currentTimeInSecs: Float64 = CMTimeGetSeconds(currentTime)
-        let actionTime: CMTime = CMTimeMake(Int64(currentTimeInSecs * 100000), 100000)
-        
-        let asset = AVAsset(url: videoURL)
-        let imageGenerator = AVAssetImageGenerator(asset: asset)
-        imageGenerator.appliesPreferredTrackTransform = true
-        imageGenerator.requestedTimeToleranceAfter = kCMTimeZero
-        imageGenerator.requestedTimeToleranceBefore = kCMTimeZero
-        
-        do {
-            let imageRef = try imageGenerator.copyCGImage(at: actionTime, actualTime: nil)
-            myImage = UIImage(cgImage: imageRef)
-        }
-        catch let err as NSError {
-            print(err.localizedDescription)
-        }*/
-        
         UIGraphicsBeginImageContextWithOptions(videoView.frame.size, false, UIScreen.main.scale)
         videoView.drawHierarchy(in: videoView.bounds, afterScreenUpdates: true)
-        self.captureImage = UIGraphicsGetImageFromCurrentImageContext()
+        newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        testImage.image = self.captureImage
-        
-        print(captureImage!)
-        ImageController.imageController.changeImage(newImage: self.captureImage!)
+        let tabBar = tabBarController as! BottomTabBarController
+        tabBar.capturedImage = newImage!
+        tabBar.frame = currentFrame
+        tabBar.time = getVideoTimeFromFrame(frame: currentFrame)
     }
     
     private func getTimeString(from time: CMTime) -> String {
