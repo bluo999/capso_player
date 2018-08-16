@@ -10,9 +10,8 @@ import UIKit
 
 class BottomTabBarController: UITabBarController, UITabBarControllerDelegate {
     
-    var capturedImage: UIImage?
-    var frame: Int = 0
-    var time: String = ""
+    var captureArray: [Capture] = []
+    var capturedImage: Capture?
     
     override func viewDidLoad() {
         super.viewDidLoad()

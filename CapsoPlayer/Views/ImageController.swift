@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import Foundation
 
-class ImageController: UIViewController, UITextViewDelegate {
+class ImageController: TabViewController, UITextViewDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -32,12 +31,31 @@ class ImageController: UIViewController, UITextViewDelegate {
         textView.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.setTabVisibility(visibilities: [false, true, false])
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let tabBar = tabBarController as! BottomTabBarController
-        print(tabBar.capturedImage)
-        imageView.image = tabBar.capturedImage
-        infoLabel.text = "Frame: " + String(tabBar.frame) + ", Time: " + tabBar.time + ", Flag: NONE"
+        imageView.image = tabBar?.capturedImage?.image
+        infoLabel.text = "Frame: " + String((tabBar!.capturedImage?.frame)!) + ", Time: " + (tabBar!.capturedImage?.time)! + ", Flag: " + (tabBar!.capturedImage?.mark)!
+    }
+    
+    @IBAction func clickSaveButton(_ sender: UIButton) {
+        if textView.text == "Comments" {
+            textView.text = ""
+        }
+        let newCapture = Capture(capture: tabBar!.capturedImage!, comment: textView.text)
+        tabBar!.captureArray.append(newCapture)
+        tabBar?.selectedIndex = 0
+        
+        print("Capture Saved")
+    }
+    
+    @IBAction func clickDiscardButton(_ sender: UIButton) {
+        tabBar?.selectedIndex = 0
+        
+        print("Capture Discarded")
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -49,7 +67,7 @@ class ImageController: UIViewController, UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "Placeholder"
+            textView.text = "Comments"
             textView.textColor = UIColor.lightGray
         }
     }

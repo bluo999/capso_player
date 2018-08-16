@@ -11,7 +11,7 @@
 import UIKit
 import AVFoundation
 
-class VideoController: UIViewController {
+class VideoController: TabViewController {
 
     @IBOutlet weak var videoView: UIView!
     var player: AVPlayer!
@@ -19,13 +19,14 @@ class VideoController: UIViewController {
     /*
      https://v.cdn.vine.co/r/videos/AA3C120C521177175800441692160_38f2cbd1ffb.1.5.13763579289575020226.mp4
      */
-    let videoURL = URL(string: "")!
+    let videoURL = URL(string: "https://s3.amazonaws.com/capsovision-s3-test/video/test_pano.mp4")!
     
     let framesPerSecond = 5.0
     var isVideoPlaying = false
     var currentFrame = 1
     var maxFrame = 1
     var atEnd = false
+    var observerContext = 0
     
     var newImage: UIImage?
     
@@ -43,6 +44,7 @@ class VideoController: UIViewController {
         
         player = AVPlayer(url: videoURL)
         player.currentItem?.addObserver(self, forKeyPath: "duration", options: [.new, .initial], context: nil)
+        player.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions(), context: nil)
         addTimeObserver()
         playerLayer = AVPlayerLayer(player: player)
         playerLayer.videoGravity = .resize
@@ -54,6 +56,10 @@ class VideoController: UIViewController {
         updateCurrentFrame(frame: 1)
         
         NotificationCenter.default.addObserver(self, selector: #selector(VideoController.finishVideo), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.setTabVisibility(visibilities: [true, false, true])
     }
     
     override func viewDidLayoutSubviews() {
@@ -132,6 +138,9 @@ class VideoController: UIViewController {
         if keyPath == "duration", let duration = player.currentItem?.duration.seconds, duration > 0.0 {
             self.durationLabel.text = getTimeString(from: player.currentItem!.duration)
         }
+        if keyPath == "status" {
+            print("status!")
+        }
     }
     
     @IBAction func captureImage(_ sender: Any) {
@@ -146,10 +155,10 @@ class VideoController: UIViewController {
         newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        let tabBar = tabBarController as! BottomTabBarController
-        tabBar.capturedImage = newImage!
-        tabBar.frame = currentFrame
-        tabBar.time = getVideoTimeFromFrame(frame: currentFrame)
+        tabBar?.capturedImage = Capture(image: newImage!, frame: currentFrame, time: getVideoTimeFromFrame(frame: currentFrame), mark: "ESOPHAGEAL")
+        tabBar?.selectedIndex = 1
+        
+        print("Image Captured")
     }
     
     private func getTimeString(from time: CMTime) -> String {
@@ -181,17 +190,5 @@ class VideoController: UIViewController {
         atEnd = true
         isVideoPlaying = false
         playButton.setTitle("Play", for: .normal)
-    }
-}
-
-extension UIView {
-    func addConstraintsWithFormat(_ format: String, views: UIView...) {
-        var viewsDictionary = [String: UIView]()
-        for (index, view) in views.enumerated() {
-            let key = "v\(index)"
-            view.translatesAutoresizingMaskIntoConstraints = false
-            viewsDictionary[key] = view
-        }
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutFormatOptions(), metrics: nil, views: viewsDictionary))
     }
 }
