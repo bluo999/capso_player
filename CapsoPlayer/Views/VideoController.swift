@@ -19,7 +19,7 @@ class VideoController: TabViewController {
     /*
      https://v.cdn.vine.co/r/videos/AA3C120C521177175800441692160_38f2cbd1ffb.1.5.13763579289575020226.mp4
      */
-    let videoURL = URL(string: "https://s3.amazonaws.com/capsovision-s3-test/video/test_pano.mp4")!
+    let videoURL = URL(string: "")!
     
     let framesPerSecond = 5.0
     var isVideoPlaying = false
